@@ -51,11 +51,11 @@ function showContent(tab, button) {
   
   // Update text content based on the tab
   if (tab === 'vision') {
-    textElement.textContent = "This is the vision text. It provides insights and future aspirations.";
+    textElement.textContent = "We envision a world where everyone has daily access to nutritious food, every child has the opportunity to learn and thrive, every individual enjoys clean water and adequate sanitation, and every community is healthy with full access to quality healthcare.";
   } else if (tab === 'mission') {
-    textElement.textContent = "Our mission is to provide excellent services and improve quality of life.";
+    textElement.textContent = " Our mission is to provide essential food supplies to communities in need, ensuring no one goes hungry. We aim to deliver emergency education support for children and young people, guaranteeing uninterrupted access to learning. We strive to ensure access to clean and safe water for underserved communities, enhancing their health and well-being. Additionally, we are committed to offering vital healthcare assistance to those in need, ensuring everyone has access to quality medical services.";
   } else if (tab === 'plan') {
-    textElement.textContent = "The next plan involves expansion and increased outreach to various communities.";
+    textElement.textContent = "We plan to launch sustainable food distribution programs involving local communities to ensure continuous food supplies. We will develop emergency learning centers in disaster-affected areas to provide immediate and quality education. Our efforts will expand clean water treatment and distribution projects to more remote areas in need. Finally, we will establish mobile clinics to deliver healthcare services directly to remote and underserved communities.";
   }
 }
 

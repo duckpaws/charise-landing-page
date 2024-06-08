@@ -141,22 +141,6 @@ $conn->close();
             </a>
           </li>
 
-          <li>
-            <a href="#event" class="navbar-link" data-nav-link>
-              <span>Event</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link" data-nav-link>
-              <span>Contact</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
         </ul>
 
       </nav>
@@ -203,14 +187,15 @@ $conn->close();
           <p class="hero-text">
           Every contribution you make brings hope and new opportunities to those in need. Together, we can create a brighter future for everyone.
           </p>
-
-          <button class="btn btn-primary">
-            <a href="#donate">
-            Donation
+          
+          
+            <a href="#donate" class="btn btn-primary" style="color: inherit; text-decoration: none;">
+              Donation
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
             </a>
-            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-          </button>
+        
 
+      
         </div>
       </section>
 
@@ -340,7 +325,7 @@ $conn->close();
             </p>
 
             <h2 class="h2 section-title">
-              Rise Your Hand to Save <strong>World Animals Life</strong>
+              Rise Your Hand to Give <strong>Worldwide Humanity</strong>
             </h2>
 
             <ul class="tab-nav">
@@ -357,7 +342,7 @@ $conn->close();
 
             <div class="tab-content">
               <p id="content-text" class="section-text">
-                But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I will give you a complete account of the system expoundmaster
+              Our mission is to provide essential food supplies to communities in need, ensuring no one goes hungry. We aim to deliver emergency education support for children and young people, guaranteeing uninterrupted access to learning. We strive to ensure access to clean and safe water for underserved communities, enhancing their health and well-being. Additionally, we are committed to offering vital healthcare assistance to those in need, ensuring everyone has access to quality medical services.
               </p>
             </div>
 
@@ -396,13 +381,6 @@ $conn->close();
                 </li>
 
               </ul>
-
-              <button class="btn btn-secondary">
-                <span>Learn More Us</span>
-
-                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-              </button>
-
           </div>
 
         </div>
@@ -464,14 +442,13 @@ $conn->close();
               <div class="service-card">
 
                 <div class="card-icon">
-                  <ion-icon name="leaf-outline"></ion-icon>
+                  <ion-icon name="happy-outline"></ion-icon>
                 </div>
 
                 <h3 class="h3 card-title">Save Children</h3>
 
                 <p class="card-text">
-                  Tempor incididunt ut labores
-                  dolore magna suspene
+                Giving children hope for life
                 </p>
 
                 <a href="#" class="btn-link">
@@ -487,14 +464,13 @@ $conn->close();
               <div class="service-card">
 
                 <div class="card-icon">
-                  <ion-icon name="earth-outline"></ion-icon>
+                  <ion-icon name="woman-outline"></ion-icon>
                 </div>
 
                 <h3 class="h3 card-title">Save Woman</h3>
 
                 <p class="card-text">
-                  Tempor incididunt ut labores
-                  dolore magna suspene
+                Provide security and human rights justice for women.
                 </p>
 
                 <a href="#" class="btn-link">
@@ -510,14 +486,13 @@ $conn->close();
               <div class="service-card">
 
                 <div class="card-icon">
-                  <ion-icon name="flower-outline"></ion-icon>
+                  <ion-icon name="fast-food-outline"></ion-icon>
                 </div>
 
                 <h3 class="h3 card-title">Food Supply</h3>
 
                 <p class="card-text">
-                  Tempor incididunt ut labores
-                  dolore magna suspene
+                Assist nutritional fulfillment in food distribution.
                 </p>
 
                 <a href="#" class="btn-link">
@@ -533,14 +508,13 @@ $conn->close();
               <div class="service-card">
 
                 <div class="card-icon">
-                  <ion-icon name="boat-outline"></ion-icon>
+                  <ion-icon name="medkit-outline"></ion-icon>
                 </div>
 
                 <h3 class="h3 card-title">Health Center</h3>
 
                 <p class="card-text">
-                  Tempor incididunt ut labores
-                  dolore magna suspene
+                Provide emergency health care while providing medical professionals.
                 </p>
 
                 <a href="#" class="btn-link">
@@ -557,12 +531,17 @@ $conn->close();
         </div>
       </section>
 
-       <!-- 
+       <!-- CTA
         - #DONATE
       -->
       <section class="donation-section" id="donate">
-  <div class="container">
-    <ul class="donate-list">
+      <div class="container">
+      <h2 class="h2 section-title">
+        Our Most Popular Causes For <strong>Building Fund</strong>
+      </h2>
+      <br>
+      <br>
+      <ul class="donate-list">
       <?php
       foreach ($goals as $index => $goalName) {
         $goal = isset($goalData[$goalName]) ? $goalData[$goalName] : null;
@@ -610,12 +589,14 @@ $conn->close();
         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
       </button>
       <div id="donationForm_<?php echo $id; ?>" class="donation-form" style="display:none;">
+        <br>
         <h3>Donate to <?php echo htmlspecialchars($goalName); ?></h3>
         <form id="donationForm-<?php echo $id; ?>" onsubmit="submitForm(event, '<?php echo $id; ?>')">
           <input type="hidden" name="goal_name" value="<?php echo htmlspecialchars($goalName); ?>">
           <input type="hidden" name="goal_id" value="<?php echo $id; ?>">
           <label for="amount_<?php echo $id; ?>">Amount:</label>
-          <input type="number" id="amount_<?php echo $id; ?>" name="amount" required>
+          <input type="number" id="amount_<?php echo $id; ?>" name="amount" placeholder="$ 00,00" required>
+          <br><br>
           <button type="submit">Donate</button>
           <button class="btn-close" onclick="closeForm('<?php echo $id; ?>')">
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
@@ -679,61 +660,11 @@ $conn->close();
   </div>
 </section>
 
-      <!-- 
-        - #TESTIMONIALS
-      -->
-
-      <section class="testi">
-
-        <div class="testi-content">
-
-          <p class="section-subtitle">
-            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
-
-            <span>Our Testimonials</span>
-          </p>
-
-          <h2 class="h2 section-title">
-            What People Say About <strong>Our Organization</strong>
-          </h2>
-
-          <div class="testi-card">
-
-            <figure class="card-avatar">
-              <img src="./assets/images/testi-avatar.png" width="60" height="60" loading="lazy" alt="David S. Neuman">
-            </figure>
-
-            <div>
-              <blockquote class="testi-text">
-                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem
-                aperiam eaquesa
-                quae abillo inventore veritatis quasi architecto beatae vitae dicta sunt explicabo enimpsam voluptatem
-              </blockquote>
-
-              <h3 class="testi-name">David S. Neuman</h3>
-
-              <p class="testi-title">Business Manager</p>
-            </div>
-
-          </div>
-
-        </div>
-
-        <figure class="testi-banner">
-          <img src="./assets/images/testi-banner.jpg" width="960" height="846" loading="lazy" alt="Rhinoceros"
-            class="img-cover">
-        </figure>
-
-      </section>
-
-
-
-
 
       <!-- 
         - #PARTNER
       -->
-
+      
       <section class="section partner">
         <div class="container">
 
@@ -778,200 +709,6 @@ $conn->close();
 
         </div>
       </section>
-
-
-
-
-
-      <!-- 
-        - #EVENT
-      -->
-
-      <section class="section event" id="event">
-        <div class="container">
-
-          <p class="section-subtitle">
-            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
-
-            <span>Event & Program</span>
-
-            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
-          </p>
-
-          <h2 class="h2 section-title">
-            Our Most Popular Causes For <strong>Building Fund</strong>
-          </h2>
-
-          <ul class="event-list">
-
-            <li>
-              <div class="event-card">
-
-                <time class="card-time" datetime="01-05">
-                  <span class="month">Jan</span>
-
-                  <span class="date">05</span>
-                </time>
-
-                <div class="wrapper">
-
-                  <div class="card-content">
-                    <p class="card-subtitle">Ocean Water</p>
-
-                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
-
-                    <p class="card-text">
-                      Sit amet consectetur adipiscing elit sed do eiusmod tempor
-                    </p>
-                  </div>
-
-                  <button class="btn btn-white">
-                    <span>View Events</span>
-
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </button>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="event-card">
-
-                <time class="card-time" datetime="02-23">
-                  <span class="month">Feb</span>
-
-                  <span class="date">23</span>
-                </time>
-
-                <div class="wrapper">
-
-                  <div class="card-content">
-                    <p class="card-subtitle">Ocean Water</p>
-
-                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
-
-                    <p class="card-text">
-                      Sit amet consectetur adipiscing elit sed do eiusmod tempor
-                    </p>
-                  </div>
-
-                  <button class="btn btn-white">
-                    <span>View Events</span>
-
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </button>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="event-card">
-
-                <time class="card-time" datetime="03-27">
-                  <span class="month">Mar</span>
-
-                  <span class="date">27</span>
-                </time>
-
-                <div class="wrapper">
-
-                  <div class="card-content">
-                    <p class="card-subtitle">Ocean Water</p>
-
-                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
-
-                    <p class="card-text">
-                      Sit amet consectetur adipiscing elit sed do eiusmod tempor
-                    </p>
-                  </div>
-
-                  <button class="btn btn-white">
-                    <span>View Events</span>
-
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </button>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-          <button class="btn btn-secondary">
-            <span>Learn More Us</span>
-
-            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-          </button>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #INSTA POST
-      -->
-
-      <section class="insta-post">
-
-        <ul class="insta-post-list">
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </section>
-
     </article>
   </main>
 
